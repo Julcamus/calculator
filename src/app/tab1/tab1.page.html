@@ -1,0 +1,181 @@
+<!--
+  Déclaration de l'entête de la calculatrice
+-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+     My calculator App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+<!--
+  Input for screen
+-->
+
+      <ion-card-header>
+        <h2>
+     <ion-input [(ngModel)]="view">
+     </ion-input>
+    </h2>
+    <!--
+      declararation   of icon-card which contain buttons 
+    -->
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3">
+              <div>
+                <ion-button (click)="clear()" size="large" color="light"
+                 class="ion-color ion-color-light ios button button-large button-solid ion-activatable 
+                 
+                 ion-focusable hydrated activated">
+                 AC</ion-button>
+
+              </div>
+            </ion-col>
+            <ion-col size="3">
+              <div>
+                <ion-button  (click) ="plus_moins()" size="large" color="light" 
+                class="ion-color ion-color-light ios button button-large button-solid ion-activatable 
+                ion-focusable hydrated activated">
+                +/-</ion-button>
+
+              </div>
+            </ion-col>
+            <ion-col  size="3">
+              <div>
+                <ion-button  (click) ="modulo()"  size="large" color="light"
+                 class="ion-color ion-color-light ios button button-large button-solid ion-activatable 
+                 ion-focusable hydrated activated">
+                  %</ion-button>
+              </div>
+            </ion-col >
+            <ion-col  size="3">
+              <div>
+                <ion-button  (click) ="division()"  size="large" color="warning" 
+                class="ion-color ion-color-warning ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">/</ion-button>
+              </div>
+            </ion-col >
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <div>
+                <ion-button  (click)="click(7)" size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">7</ion-button>
+              </div>
+            </ion-col>
+            <ion-col size="3">
+              <div>
+                <ion-button  (click)="click(8)"   size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">8</ion-button>
+              </div>
+            </ion-col>
+            <ion-col  size="3">
+              <div>
+                <ion-button (click)="click(9)"  size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">9</ion-button>
+              </div>
+            </ion-col >
+            <ion-col  size="3">
+              <div>
+                <ion-button (click)="multi()" size="large" color="warning" 
+                class="ion-color ion-color-warning ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">*</ion-button>
+              </div>
+            </ion-col >
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <div>
+                <ion-button (click)="click(4)"  size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">4</ion-button>
+              </div>
+            </ion-col>
+            <ion-col size="3">
+              <div>
+                <ion-button (click)="click(5)" size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">5</ion-button>
+              </div>
+            </ion-col>
+            <ion-col  size="3">
+              <div>
+                <ion-button  (click)="click(6)" size="large" color="dark"
+                 class="ion-color ion-color-dark ios button button-large button-solid 
+                 ion-activatable ion-focusable hydrated activated">6</ion-button>
+              </div>
+            </ion-col >
+            <ion-col  size="3">
+              <div>
+                <ion-button  (click)="moins()" size="large" color="warning"
+                 class="ion-color ion-color-warning ios button button-large button-solid 
+                 ion-activatable ion-focusable hydrated activated">-</ion-button>
+              </div>
+            </ion-col >
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <div>
+                <ion-button (click)="click(1)"  size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">1</ion-button>
+              </div>
+            </ion-col>
+            <ion-col size="3">
+              <div>
+                <ion-button (click)="click(2)"  size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">2</ion-button>
+              </div>
+            </ion-col>
+            <ion-col  size="3">
+              <div>
+                <ion-button (click)="click(3)" size="large" color="dark" 
+                class="ion-color ion-color-dark ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">3</ion-button>
+              </div>
+            </ion-col >
+            <ion-col  size="3">
+              <div>
+                <ion-button  (click)="plus()" size="large" color="warning" 
+                class="ion-color ion-color-warning ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">+</ion-button>
+              </div>
+            </ion-col >
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button  (click)="click(0)" expand="block" color="success" size="large"
+               class="ios button button-block button-solid ion-activatable 
+               ion-focusable hydrated activated">0</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <div>
+                <ion-button (click)="point()"  size="large" color="danger" 
+                class="ion-color ion-color-danger ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">.</ion-button>
+              </div>
+            </ion-col>
+            <ion-col  size="3">
+              <div>
+                <ion-button (click)="submit()"  size="large" color="secondary" 
+                class="ion-color ion-color-secondary ios button button-large button-solid 
+                ion-activatable ion-focusable hydrated activated">=</ion-button>
+
+              </div>
+            </ion-col >
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
